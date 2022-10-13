@@ -1,4 +1,4 @@
-package news.slivy.database.users
+package news.s.database.users
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert

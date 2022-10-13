@@ -1,6 +1,6 @@
-package news.slivy.cache
+package news.s.cache
 
-import news.slivy.feature.register.RegisterReceiveRemote
+import news.s.feature.register.RegisterReceiveRemote
 
 data class TokenCache(
     val token: String,

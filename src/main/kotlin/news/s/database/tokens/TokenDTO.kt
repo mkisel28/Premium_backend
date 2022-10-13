@@ -1,4 +1,4 @@
-package news.slivy.database.tokens
+package news.s.database.tokens
 
 class TokenDTO (
     val id: String,

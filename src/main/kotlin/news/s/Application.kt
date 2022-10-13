@@ -1,13 +1,11 @@
-package news.slivy
+package news.s
 
 import io.ktor.server.engine.*
 import io.ktor.server.cio.*
-import news.slivy.feature.login.configureLoginRouting
-import news.slivy.feature.register.configureRegisterRouting
-import news.slivy.plugins.*
+import news.s.feature.login.configureLoginRouting
+import news.s.feature.register.configureRegisterRouting
+import news.s.plugins.*
 import org.jetbrains.exposed.sql.Database
-import java.sql.Connection
-import java.sql.DriverManager
 
 fun main() {
 

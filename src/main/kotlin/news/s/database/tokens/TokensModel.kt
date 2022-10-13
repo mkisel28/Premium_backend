@@ -1,4 +1,4 @@
-package news.slivy.database.tokens
+package news.s.database.tokens
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert

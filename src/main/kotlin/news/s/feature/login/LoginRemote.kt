@@ -1,4 +1,4 @@
-package news.slivy.feature.login
+package news.s.feature.login
 
 import kotlinx.serialization.Serializable
 

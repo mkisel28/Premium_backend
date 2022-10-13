@@ -1,12 +1,12 @@
-package news.slivy.feature.login
+package news.s.feature.login
 
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
-import news.slivy.database.tokens.TokenDTO
-import news.slivy.database.tokens.TokensModel
-import news.slivy.database.users.UserModel
+import news.s.database.tokens.TokenDTO
+import news.s.database.tokens.TokensModel
+import news.s.database.users.UserModel
 import java.util.*
 
 class LoginController(private val call: ApplicationCall) {

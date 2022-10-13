@@ -1,4 +1,4 @@
-package news.slivy.feature.register
+package news.s.feature.register
 
 import kotlinx.serialization.Serializable
 
