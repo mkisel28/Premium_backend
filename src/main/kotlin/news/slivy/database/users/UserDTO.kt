@@ -1,4 +1,4 @@
-package news.s.database.users
+package news.slivy.database.users
 
 class UserDTO (
     val name: String,

@@ -1,3 +1,3 @@
-package news.s.utils
+package news.slivy.utils
 
 fun String.isValidEmail(): Boolean = true

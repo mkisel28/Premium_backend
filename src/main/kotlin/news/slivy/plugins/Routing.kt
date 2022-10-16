@@ -1,4 +1,4 @@
-package news.s.plugins
+package news.slivy.plugins
 
 import io.ktor.server.routing.*
 import io.ktor.server.application.*

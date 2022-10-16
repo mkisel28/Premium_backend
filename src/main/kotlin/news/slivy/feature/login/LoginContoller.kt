@@ -1,12 +1,12 @@
-package news.s.feature.login
+package news.slivy.feature.login
 
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
-import news.s.database.tokens.TokenDTO
-import news.s.database.tokens.TokensModel
-import news.s.database.users.UserModel
+import news.slivy.database.tokens.TokenDTO
+import news.slivy.database.tokens.TokensModel
+import news.slivy.database.users.UserModel
 import java.util.*
 
 class LoginController(private val call: ApplicationCall) {
@@ -15,10 +15,14 @@ class LoginController(private val call: ApplicationCall) {
         val receive =  call.receive<LoginReceiveRemote>()
         val userDTO = UserModel.fetchUser(receive.login)
 
-        if (userDTO == null) {
+        if (userDTO == null)
+        {
             call.respond(HttpStatusCode.BadRequest, "User not found")
-        } else{
-            if (userDTO.password == receive.password) {
+        }
+        else
+        {
+            if (userDTO.password == receive.password)
+            {
                 val token = UUID.randomUUID().toString()
                 TokensModel.insert(
                     TokenDTO(
@@ -28,7 +32,9 @@ class LoginController(private val call: ApplicationCall) {
                     )
                 )
                 call.respond(LoginResponseRemote(token = token))
-            }else {
+            }
+            else
+            {
                 call.respond(HttpStatusCode.BadRequest, "Invalid password")
             }
         }
@@ -36,3 +42,5 @@ class LoginController(private val call: ApplicationCall) {
         call.respond(HttpStatusCode.BadRequest, "sd")
     }
 }
+
+

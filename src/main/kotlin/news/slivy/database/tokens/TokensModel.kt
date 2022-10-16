@@ -1,7 +1,8 @@
-package news.s.database.tokens
+package news.slivy.database.tokens
 
 import org.jetbrains.exposed.sql.Table
 import org.jetbrains.exposed.sql.insert
+import org.jetbrains.exposed.sql.select
 import org.jetbrains.exposed.sql.transactions.transaction
 
 object TokensModel: Table("tokens") {
@@ -19,5 +20,21 @@ object TokensModel: Table("tokens") {
 
         }
     }
+
+    fun fetchTokens(id: String): TokenDTO?{
+        return try {
+            transaction {
+                val tokensModel = TokensModel.select{ TokensModel.id.eq(id) }.single()
+                TokenDTO(
+                    id  = tokensModel[TokensModel.id],
+                    login = tokensModel[login],
+                    token = tokensModel[token]
+                )
+            }
+        } catch (e: Exception){
+            null
+        }
+    }
+
 
 }

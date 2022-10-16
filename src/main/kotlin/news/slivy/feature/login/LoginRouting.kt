@@ -1,4 +1,4 @@
-package news.s.feature.login
+package news.slivy.feature.login
 
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
@@ -6,7 +6,7 @@ import io.ktor.server.routing.*
 fun Application.configureLoginRouting() {
 
     routing {
-        get("/login") {
+        post("/login") {
             val loginController = LoginController(call)
             loginController.performLogin()
         }
