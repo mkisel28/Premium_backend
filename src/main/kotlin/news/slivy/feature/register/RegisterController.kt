@@ -8,6 +8,7 @@ import news.slivy.database.tokens.TokenDTO
 import news.slivy.database.tokens.TokensModel
 import news.slivy.database.users.UserDTO
 import news.slivy.database.users.UserModel
+import news.slivy.security.hashing.toMD5
 import news.slivy.utils.isValidEmail
 import org.jetbrains.exposed.exceptions.ExposedSQLException
 import java.util.*
@@ -31,7 +32,7 @@ class RegisterController(private val call: ApplicationCall) {
             {
                 UserModel.insert(UserDTO(
                         login = registerReceiveRemote.login,
-                        password = registerReceiveRemote.password,
+                        password = toMD5().Create(registerReceiveRemote.password),
                         name = registerReceiveRemote.name,
                         privatename = registerReceiveRemote.privatename,
                         bio = ""))

@@ -7,7 +7,7 @@ import org.jetbrains.exposed.sql.transactions.transaction
 
 object UserModel: Table("users") {
     private val login = UserModel.varchar("login",25)
-    private val password = UserModel.varchar("password",25)
+    private val password = UserModel.varchar("password",60)
     private val name = UserModel.varchar("name",32)
     private val privatename = UserModel.varchar("privatename",25)
     private val bio = UserModel.varchar("bio",100)
